@@ -1,0 +1,2 @@
+root: D:\Sem_2_2025\React_Project\nvm
+path: D:\Sem_2_2025\React_Project\nodejs
