@@ -44,7 +44,8 @@ const Register = () => {
   };
 
   return (
-    <div>
+    <div style={{ padding: '1rem' }}>
+      <h2>Registration Form</h2>
       <form>
         <div>
           <label>Username:</label>
@@ -76,7 +77,7 @@ const Register = () => {
         <div>
           <label>Gender:</label>
           {genderOptions.map((gender) => (
-            <label key={gender.value}>
+            <label key={gender.value} style={{ marginRight: '1rem' }}>
               <input
                 type="radio"
                 name="gender"
@@ -91,7 +92,7 @@ const Register = () => {
         <div>
           <label>Hobbies:</label>
           {hobbyOptions.map((hobby) => (
-            <label key={hobby.value}>
+            <label key={hobby.value} style={{ marginRight: '1rem' }}>
               <input
                 type="checkbox"
                 value={hobby.value}
@@ -118,7 +119,7 @@ const Register = () => {
           </select>
         </div>
       </form>
-      <div>
+      <div style={{ marginTop: '1rem' }}>
         <h3>Form Data:</h3>
         <p>Username: {formData.username}</p>
         <p>Firstname: {formData.firstname}</p>
