@@ -7,7 +7,7 @@ export default defineConfig({
     react({
       babel: {
         plugins: [['babel-plugin-react-compiler']],
-        base: '/input_data',
+        base: '/display_input',
       },
     }),
   ],
