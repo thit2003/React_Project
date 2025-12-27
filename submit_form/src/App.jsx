@@ -1,39 +1,30 @@
 import React, { useState } from 'react';
 import './App.css';
-import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
 import Register from './components/Register.jsx';
 import RegisterWithSubmit from './components/RegisterWithSubmit.jsx';
 
-function AppRouter() {
-  const navigate = useNavigate();
+function App() {
   const [submittedData, setSubmittedData] = useState(null);
+  const [showDisplay, setShowDisplay] = useState(false);
 
   const handleSubmit = (data) => {
     setSubmittedData(data);
-    navigate('/register-display');
+    setShowDisplay(true);
   };
 
   const handleBack = () => {
-    navigate('/');
+    setShowDisplay(false);
   };
 
   return (
-    <Routes>
-      <Route path="/" element={<Register onSubmit={handleSubmit} />} />
-      <Route
-        path="/register-display"
-        element={<RegisterWithSubmit data={submittedData} onBack={handleBack} />}
-      />
-    </Routes>
+    <>
+      {showDisplay ? (
+        <RegisterWithSubmit data={submittedData} onBack={handleBack} />
+      ) : (
+        <Register onSubmit={handleSubmit} />
+      )}
+    </>
   );
 }
 
-function App() {
-  return (
-    <BrowserRouter>
-      <AppRouter />
-    </BrowserRouter>
-  );
-}
-
-export default App
+export default App;
